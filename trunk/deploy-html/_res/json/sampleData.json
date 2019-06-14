@@ -1,0 +1,59 @@
+[
+	{
+		"agency":"Arc World Wide", 
+		"bets":40,
+		"knockedOut":false,
+		"players":[
+			{
+				"name":"Judge Judy",
+				"bets":12,
+				"wins":7,
+				"knockedOut":false
+			},
+			{
+				"name":"Mike Minor",
+				"bets":40,
+				"wins":5,
+				"knockedOut":false
+			}
+		]
+	},
+	{
+		"agency":"Digitas", 
+		"bets":10,
+		"knockedOut":false,
+		"players":[
+			{
+				"name":"Dave Perea",
+				"bets":12,
+				"wins":7,
+				"knockedOut":false	
+			},
+			{
+				"name":"Greyson Purcel",
+				"bets":12,
+				"wins":7,
+				"knockedOut":false	
+			}
+		]
+	},
+	{
+		"agency":"Leo Burnet", 
+		"bets":20,
+		"knockedOut":false,
+		"players":[
+			{
+				"name":"Miles Green",
+				"bets":10,
+				"wins":7,
+				"knockedOut":false	
+			},
+			{
+				"name":"Scott North",
+				"bets":12,
+				"wins":7,
+				"knockedOut":false	
+			}
+		]
+	}
+]

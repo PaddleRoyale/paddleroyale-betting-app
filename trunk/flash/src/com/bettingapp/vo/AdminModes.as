@@ -1,0 +1,1 @@
+﻿package com.bettingapp.vo{	public class AdminModes	{		public static const ADMIN_MODE_NONE:int = 0;		public static const ADMIN_MODE_ADD_CREDITS:int = 1;		public static const ADMIN_MODE_CHECK_CREDITS:int = 2;		public static const ADMIN_MODE_PROCESS_BETS:int = 3;		public static const ADMIN_MODE_SHOW_WINNING_BET_TOTALS:int = 4;	}}

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Paddlye Royale - Betting Application</title>
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk
+/html5.js"></script>
+        <![endif]-->
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="_res/css/main.css" />
+        
+        <!-- Javascript -->
+		<script src="_res/js/libs/jquery-1.7.2.min.js"></script>
+		<script src="_res/js/libs/jquery.tmpl.min.js"></script>
+		<!--<script src="_res/js/ajaxTest.js"></script>-->
+		<script src="_res/js/main.js"></script>
+        
+        <!-- Mobile iOS -->
+		<meta content="initial-scale=1.0; maximum-scale=1.5; user-scalable=0;" name="viewport" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    </head>
+    
+    <body class="home">
+        <!-- JQuery Templates -->
+        <script id="agencyListItemTemplate" type="text/x-jquery-tmpl">
+			<li data-id="${id}" data-name="${agency}" data-bets="$bets">${agency}<span>${bets} bets</span></li>
+        </script>
+        
+        <script id="playerListItemTemplate" type="text/x-jquery-tmpl">
+			<li data-id="${id}" data-name="${name}" data-bets="${bets}">${name}<span>${bets} bets</span></li>
+        </script>
+
+		<!-- Content -->
+		<div id="container">
+			
+			<!-- Step 1 - Voucher ID input -->
+			<div id="voucherIDView" class="mainView">
+				<div class="header">
+					<div class="result">Enter your Betting ID below</div>
+				</div>
+				<div class="mainContent">
+					<a href="#" class="button numPad tl">1</a>
+					<a href="#" class="button numPad">2</a>
+					<a href="#" class="button numPad tr right">3</a>
+					
+					<a href="#" class="button numPad">4</a>
+					<a href="#" class="button numPad">5</a>
+					<a href="#" class="button numPad right">6</a>
+					
+					<a href="#" class="button numPad">7</a>
+					<a href="#" class="button numPad">8</a>
+					<a href="#" class="button numPad right">9</a>
+					
+					<a href="#" class="button clearButton bl bottom">Clear</a>
+					<a href="#" class="button numPad bottom">0</a>
+					<a href="#" class="button enterButton br bottom right">Enter</a>
+				</div>
+				<div class="footer">This is the series of numbers found on your badge.</div>
+			</div>
+
+
+
+
+			<!-- Step 2 - Choose Bet Type -->
+			<div id="chooseBetTypeView" class="mainView">
+				<div class="header">
+					Choose the type of bet you'd like to make.
+				</div>
+				<div class="mainContent">
+					<a href="#" class="button agency">Bet on Agency</a>
+					<a href="#" class="button player">Bet on Player</a>
+				</div>
+				<div class="footer">
+					<a href="#" class="cancel">Cancel</a>
+				</div>
+			</div>
+
+
+
+
+			<!-- Step 3 - No betting tokens -->
+			<div id="noCreditsView" class="mainView">
+				<div class="header">
+					You do not have any credits to bet with!
+				</div>
+				<div class="mainContent">
+					Please go to the Betting booth to redeem more credits. After doing so please click on the button below.
+				</div>
+				<div class="footer">
+					<a href="#" class="cancel">I've Added Credits, Please Continue</a>
+				</div>
+			</div>
+
+
+
+
+			<!-- Step 3.1 - Agency Bet -->
+			<div id="agencyBetView" class="mainView">
+				<div class="header">
+					Which agency would you like to make your bet on?
+				</div>
+				<div class="mainContent">
+					<input type="text" name="agencySearch" value="Search" class="search" />
+					<ul>
+						<li data-name="Agency.com" data-bets="40" data-id="0">Agency.com<span>40 bets</span></li>
+						<li data-name="Arc World Wide" data-bets="40" data-id="1">Arc World Wide<span>40 bets</span></li>
+						<li data-name="Digital Kitchen" data-bets="40" data-id="2">Digital Kitchen<span>40 bets</span></li>
+						<li data-name="Digitas" data-bets="40" data-id="3">Digitas<span>40 bets</span></li>
+						<li data-name="Doejo" data-bets="40" data-id="4">Doejo<span>40 bets</span></li>
+						<li data-name="Leo Burnett" data-bets="40" data-id="5">Leo Burnett<span>40 bets</span></li>
+						<li data-name="Starcom" data-bets="40" data-id="6">Starcom<span>40 bets</span></li>
+						<li data-name="Razorfish" data-bets="40" data-id="7">Razorfish<span>40 bets</span></li>
+					</ul>
+				</div>
+				<div class="footer">
+					<a href="#" class="cancel">Cancel</a>
+				</div>
+			</div>
+
+
+
+
+			<!-- Step 3.2 - Player Bet -->
+			<div id="playerBetView" class="mainView">
+				<div class="header">
+					Select the player on which you'd like to make your bet.
+				</div>
+				<div class="mainContent">
+					<input type="text" name="playerSearch" value="Search" class="search" />
+					<ul>
+						<li data-name="Damien Van Horne" data-bets="40" data-id="0">Damien Van Horne<span>40 bets</span></li>
+						<li data-name="Michael Minor" data-bets="40" data-id="1">Michael Minor<span>40 bets</span></li>
+						<li data-name="Chad Mirshak" data-bets="40" data-id="2">Chad Mirshak<span>40 bets</span></li>
+						<li data-name="Scott North" data-bets="40" data-id="3">Scott North<span>40 bets</span></li>
+						<li data-name="Dave Perea" data-bets="40" data-id="4">Dave Perea<span>40 bets</span></li>
+						<li data-name="Miles Green" data-bets="40" data-id="5">Miles Green<span>40 bets</span></li>
+						<li data-name="Greyson Purcel" data-bets="40" data-id="6">Greyson Purcel<span>40 bets</span></li>
+						<li data-name="Mike Ditka" data-bets="40" data-id="7">Mike Ditka<span>40 bets</span></li>
+						<li data-name="Brian Barthelt" data-bets="40" data-id="8">Brian Barthelt<span>40 bets</span></li>
+						<li data-name="Beethoven" data-bets="40" data-id="9">Beethoven<span>40 bets</span></li>
+						<li data-name="Albert Einstein" data-bets="40" data-id="10">Albert Einstein<span>40 bets</span></li>
+						<li data-name="Joshua Minor" data-bets="40" data-id="11">Joshua Minor<span>40 bets</span></li>
+						<li data-name="Dan Savage" data-bets="40" data-id="12">Dan Savage<span>40 bets</span></li>
+						<li data-name="Conan OBrien" data-bets="40" data-id="13">Conan OBrien<span>40 bets</span></li>
+						<li data-name="Whitney Houston" data-bets="40" data-id="14">Whitney Houston<span>40 bets</span></li>
+						<li data-name="Alex Trebek" data-bets="40" data-id="15">Alex Trebek<span>40 bets</span></li>
+						<li data-name="Mr. Green" data-bets="40" data-id="16">Mr. Green<span>40 bets</span></li>
+						<li data-name="Flash Gordon" data-bets="40" data-id="17">Flash Gordon<span>40 bets</span></li>
+						<li data-name="Teddy Ruckspin" data-bets="40" data-id="18">Teddy Ruckspin<span>40 bets</span></li>
+					</ul>
+				</div>
+				<div class="footer">
+					<a href="#" class="cancel">Cancel</a>
+				</div>
+			</div>
+			
+			
+			
+			
+			<!-- Step 4 - Bet Confirmation -->
+			<div id="confirmationView" class="mainView">
+				<div class="header">
+					Thank You!
+				</div>
+				<div class="mainContent">
+					Your bet has been successfully placed.
+				</div>
+				<div class="footer">
+					<a href="#" class="cancel">Place Another Bet</a>
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
